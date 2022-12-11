@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body{
+            background-color: blueviolet;
+
+        }
+        .btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 9px 20px 10px 20px;
+  text-decoration: none;
+}
+#resdesc{
+    color: yellow;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #d934b2);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #d934b2);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #d934b2);
+  background-image: -o-linear-gradient(top, #3cb0fd, #d934b2);
+  background-image: linear-gradient(to bottom, #3cb0fd, #d934b2);
+  color: #070707;
+  text-decoration: none;
+}
+label{
+    padding-right: 70px;
+    color: rgb(255, 255, 0);
+    
+}
+
+    </style>
+    <script>
+        function calc(){
+            let m = document.getElementById("in1").value;
+            let n = document.getElementById("in2").value;
+
+        if(m!=="" && n!==""){   
+            var k = Math.random();
+            k = k*100;
+            k=Math.floor(k)+1;
+            document.getElementById('result').innerHTML = k+"%";
+            
+            if(k>=75){
+                document.getElementById('resdesc').innerHTML = m +" and "+n+", You guys are made for each other, Never leave eathother." ;
+            }
+            else if(k<75 && k>=50){
+                document.getElementById('resdesc').innerHTML = m +" and "+n+", You guys should trust eachother at any cost.";
+            }
+            else{
+                document.getElementById('resdesc').innerHTML= m+" and "+n+", Stop Having Dreams, Wake Up, Now Both of you go to Gym and do 50 Push ups.";
+            }      
+        }
+        else{
+            document.getElementById('result').innerHTML = "Enter Names To calculate";
+        }        
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1 style="color:#FFC0CB ">Love Calculator</h1>
+    
+        <label ><strong>Enter Name 1 :  </strong> </label> <br>
+        <input type="text" id="in1" ><br><br>
+        <label ><strong>Enter Name 2 :  </strong></label> <br>
+        <input type="text" id="in2" ><br><br>
+        <input type="button" class="btn" value="Calculate" onclick="calc()">
+        <h4 id="result"></h4>
+        <p id="resdesc"></p>
+    </center>
+    
+</body>
+</html>
